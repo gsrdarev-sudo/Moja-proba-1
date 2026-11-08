@@ -112,13 +112,14 @@
     <button id="send-btn" onclick="posaljiPoruku()">Pošalji</button>
   </div>
 
-  <!-- Firebase SDK -->
+    <!-- Firebase SDK -->
   <script type="module">
     import { initializeApp } from "https://gstatic.com";
     import {
       getDatabase, ref, push, set, update, remove,
       onChildAdded, onChildChanged, onValue, onDisconnect, serverTimestamp
     } from "https://gstatic.com";
+
 
     // =========================================================================
     // https://moja-proba-1-default-rtdb.europe-west1.firebasedatabase.app/
