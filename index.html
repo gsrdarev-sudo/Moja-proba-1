@@ -97,7 +97,6 @@
     <div class="header-actions">
       <button class="btn-small" onclick="promijeniIme()">Ime</button>
       <button class="btn-small" onclick="promijeniLozinku()">Lozinka</button>
-      <button class="btn-small btn-danger" onclick="obrisiRazgovor()">Obriši</button>
     </div>
   </header>
 
@@ -435,7 +434,7 @@
       event.target.value = "";
     };
 
-    // 9. Pomoćni gumbi (Lozinka, Ime, Brisanje)
+    // 9. Pomoćni gumbi (Lozinka, Ime)
     window.promijeniLozinku = function() {
       sessionStorage.removeItem("chat_lozinka");
       location.reload();
@@ -447,12 +446,6 @@
         mojeIme = novoIme.trim();
         localStorage.setItem("chat_ime", mojeIme);
         update(mojStatusRef, { ime: mojeIme });
-      }
-    };
-
-    window.obrisiRazgovor = function() {
-      if (confirm("Jeste li sigurni da želite trajno obrisati sve poruke u ovom razgovoru?")) {
-        remove(porukeRef).then(() => { chatBox.innerHTML = ""; });
       }
     };
 
